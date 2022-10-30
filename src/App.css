@@ -1,19 +1,172 @@
+*{
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
+} */
+
+/* #share-icon {
+  margin-right: auto;
+} */
+
+.profile {
+  margin: 0 auto 32px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.profile_images{
+  display: flex;
+  flex-direction: column;
+  margin: 44px auto 24px;
+}
+
+#share-icon{
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+}
+
+#share-icon:hover {
+  cursor: pointer;
+}
+
+#profile__img{
+  width: 88px;
+  height: 88px;
+  align-self: center;
+  border-radius: 275px;
+}
+
+#twitter {
+  font-weight: 700;
+}
+
+sub {
+  display: block;
+  font-family: "Inter", sans-serif;
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto 24px;
+}
+
+
+.btn {
+  height: 68px;
+  background: #EAECF0;
+  border: 1px solid #EAECF0;
+  border-radius: 8px;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background: #b8b9b9;;
+}
+
+a {
+  text-decoration: none;
+  color: #101828;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+button {
+  line-height: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.socials {
+  padding: 24px 0; 
+}
+
+.socials-icons{
+  margin: 0 auto 32px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+
+#slack_icon, #github_icon {
+  width: 24px;
+  height: 24px;
+}
+
+.footer{
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+hr {
+  border-top: dotted 1px #667085;
+}
+
+#zuri_logo {
+  width: 100px;
+  height: 18px;
+}
+
+#footer_text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #667085;
+  margin-right: auto;
+}
+
+#I4G_logo {
+  width: 100px;
+  height: 24px;
+}
+
+/* Media Queries for Desktop */
+@media screen and (min-width: 800px) {
+  #zuri_logo {
+    width: 180px;
+    height: 24px;
+  }
+
+  #I4G_logo {
+    width: 140px;
+    height: 32px;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    align-items: center;  
+  }
+
+  #footer_text{
+    margin-right: 0;
   }
 }
 
-.App-header {
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,17 +175,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
