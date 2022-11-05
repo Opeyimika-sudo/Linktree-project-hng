@@ -2,36 +2,61 @@ import React from 'react'
 import '../App.css'
 
 export default function Form() {
-  return (
-    <>
-      <form>
-        <h2 id="form_header">Contact Me</h2>
-        <p id="form_text">Hi there, contact me to ask me about anything you have in mind.</p>
+    const [formData, setFormData] = React.useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+        isChecked: false
+    })
 
-        <div className="names">
-            <div className="first-name">
-                <label htmlFor="first_name" id="first">First name</label><br />
-                <input type="text" name="" value="" id="first_name" placeholder="Enter your first name"/>
-            </div>
-            <div className="last-name">
-                <label htmlFor="last_name" id="second">Last name</label><br />
-                <input type="text" name="" value="" id="last_name" placeholder="Enter your last name"/>
-            </div>
-        </div>
+    function handleChange(event){
+        setFormData((prevState) => {
+            const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+            const name = event.target.name;
+            return {
+                ...prevState,
+            [name] : value
+            }
+        })
+        console.log(formData)
+    }
 
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" value="" id="email" placeholder="yourname@email.com"/>
-        <label htmlFor="message">Message</label>
-        <textarea name="" value="" id="message" placeholder="Send me a message and I'll reply you as soon as possible..."/>
-        
-        <div className="checkbox">
-            <input type="checkbox" name="checked" value="" id="checked"/>
-            <label htmlFor="checked" id="checked-text">You agree to providing your data to @LifeOfOpeyimika who may contact you.</label>
-        </div>
-        
-        <button id='btn__submit'>Send message</button>
-      </form>
-    </>
-  )
+    function handleSubmit(event){
+        event.preventDefault();
+        console.log(formData)
+    }
+
+    return (
+        <>
+            <form>
+                <h2 id="form_header">Contact Me</h2>
+                <p id="form_text">Hi there, contact me to ask me about anything you have in mind.</p>
+
+                <div className="names">
+                    <div className="first-name">
+                        <label htmlFor="first_name" id="first">First name</label><br />
+                        <input required type="text" name="firstName" onChange= {handleChange} value={formData.firstName} id="first_name" placeholder="Enter your first name"/>
+                    </div>
+                    <div className="last-name">
+                        <label htmlFor="last_name" id="second">Last name</label><br />
+                        <input required type="text" name="lastName" onChange= {handleChange} value={formData.lastName} id="last_name" placeholder="Enter your last name"/>
+                    </div>
+                </div>
+
+                <label htmlFor="email">Email</label>
+                <input required type="email" name="email" onChange={handleChange} value={formData.email} id="email" placeholder="yourname@email.com"/>
+                <label htmlFor="message">Message</label>
+                <textarea required name="message" onChange={handleChange} value={formData.message} id="message" placeholder="Send me a message and I'll reply you as soon as possible..."/ >
+                
+                <div className="checkbox">
+                    <input type="checkbox" name="isChecked" onChange={handleChange} checked={formData.isChecked} id="isChecked"/>
+                    <label htmlFor="isChecked" id="checked-text">You agree to providing your data to @LifeOfOpeyimika who may contact you.</label>
+                </div>
+                
+                <button id='btn__submit' onClick={handleSubmit}>Send message</button>
+            </form>
+        </>
+    )
 }
 
