@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 
 export default function Links() {
     return (
@@ -25,6 +26,9 @@ export default function Links() {
             <button className="btn btn-6" id="book__design">
                 <a href="https://books.zuri.team/design-rules">Design Books</a>
                 <sub>Here's a free design book courtesy of your friends from Zuri</sub>
+            </button>
+            <button className="btn btn-7" id="contact_me">
+                <Link to="../Contact">Contact Me</Link>
             </button>
         </div>
     )
