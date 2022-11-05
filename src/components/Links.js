@@ -1,4 +1,5 @@
 import React from "react"
+import Contactme from './Contactme'
 
 export default function Links() {
     return (
@@ -26,6 +27,7 @@ export default function Links() {
                 <a href="https://books.zuri.team/design-rules">Design Books</a>
                 <sub>Here's a free design book courtesy of your friends from Zuri</sub>
             </button>
+            <Contactme />
         </div>
     )
 }
