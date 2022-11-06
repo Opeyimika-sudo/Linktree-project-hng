@@ -1,5 +1,6 @@
 import React from "react"
-import Contactme from './Contactme'
+import { Link } from "react-router-dom"
+
 
 export default function Links() {
     return (
@@ -27,7 +28,11 @@ export default function Links() {
                 <a href="https://books.zuri.team/design-rules">Design Books</a>
                 <sub>Here's a free design book courtesy of your friends from Zuri</sub>
             </button>
-            <Contactme />
+            <button id="contact" className="btn">
+                <Link to="/contact">
+                    <h3>Contact Me</h3>
+                </Link>
+            </button>
         </div>
     )
 }
