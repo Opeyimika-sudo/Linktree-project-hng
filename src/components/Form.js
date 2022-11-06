@@ -25,7 +25,7 @@ export default function Form() {
     function handleSubmit(event){
         event.preventDefault();
         console.log(formData)
-        formData !== null ? alert("Form filled") : alert("Fill the form please!");
+        // formData !== null ? alert("Form filled") : alert("Fill the form please!");
         setFormData({ firstName: "", lastName: "", message: "", email: "", isChecked: false})
     }
 
@@ -83,7 +83,7 @@ export default function Form() {
                     <label htmlFor="isChecked" id="checked-text">You agree to providing your data to @LifeOfOpeyimika who may contact you.</label>
                 </div>
                 
-                <button id='btn__submit' onClick={handleSubmit}>Send message</button>
+                <button id='btn__submit' onClick={handleSubmit} type="submit">Send message</button>
             </form>
         </>
     )
