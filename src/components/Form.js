@@ -31,7 +31,7 @@ export default function Form() {
 
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2 id="form_header">Contact Me</h2>
                 <p id="form_text">Hi there, contact me to ask me about anything you have in mind.</p>
 
@@ -39,51 +39,55 @@ export default function Form() {
                     <div className="first-name">
                         <label htmlFor="first_name" id="first">First name</label><br />
                         <input 
+                        required
                         type="text" 
                         name="firstName" 
                         onChange= {handleChange} 
                         value={formData.firstName} 
                         id="first_name" 
                         placeholder="Enter your first name" 
-                        required />
+                         />
                     </div>
                     <div className="last-name">
                         <label htmlFor="last_name" id="second">Last name</label><br />
                         <input  
+                        required
                         type="text" 
                         name="lastName" 
                         onChange= {handleChange} 
                         value={formData.lastName} 
                         id="last_name" 
                         placeholder="Enter your last name" 
-                        required />
+                         />
                     </div>
                 </div>
 
                 <label htmlFor="email">Email</label>
                 <input 
+                required
                 type="email" 
                 name="email" 
                 onChange={handleChange} 
                 value={formData.email} 
                 id="email" 
                 placeholder="yourname@email.com" 
-                required />
+                 />
                 <label htmlFor="message">Message</label>
                 <textarea 
+                required
                 name="message" 
                 onChange={handleChange} 
                 value={formData.message} 
                 id="message" 
                 placeholder="Send me a message and I'll reply you as soon as possible..." 
-                required />
+                 />
                 
                 <div className="checkbox">
                     <input type="checkbox" name="isChecked" onChange={handleChange} checked={formData.isChecked} id="isChecked"/>
                     <label htmlFor="isChecked" id="checked-text">You agree to providing your data to @LifeOfOpeyimika who may contact you.</label>
                 </div>
                 
-                <button id='btn__submit' onClick={handleSubmit} type="submit">Send message</button>
+                <button type="submit" id='btn__submit'>Send message</button>
             </form>
         </>
     )
